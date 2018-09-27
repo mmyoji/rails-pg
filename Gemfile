@@ -21,10 +21,6 @@ gem 'uglifier'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-
 group :development do
   gem 'listen'
   gem 'spring'
