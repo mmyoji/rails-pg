@@ -1,2 +1,14 @@
 <h1>Web::Home#index</h1>
 <p>Find me in app/views/web/home/index.html.erb</p>
+
+<% if current_user %>
+  <p>Hello, <strong><%= current_user.username %></strong>!</p>
+
+  <%= link_to "Logout", logout_url, method: :delete, data: { confirm: "Are you sure to logout?" } %>
+
+<% else %>
+    <%= link_to "Login", login_url %>
+
+    <p>or you don't have an account?</p>
+    <%= link_to "Sign up", new_user_url %>
+<% end %>
