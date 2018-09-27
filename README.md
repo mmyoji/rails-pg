@@ -1,24 +1,36 @@
-# README
+# README - Rails Playground
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+* Ruby  v2.5.1
+* Rails v5.2.1
+* docker, docker-compose
 
-* Ruby version
+## Setup
 
-* System dependencies
+```sh
+# bundle install
+$ bundle -j 4 --path=vendor/bundle
 
-* Configuration
+# Start docker services
+$ docker-compose up -d
 
-* Database creation
+# Create DB
+$ bin/rails db:create db:migrate
 
-* Database initialization
+# Start the server
+$ bin/rails s
+```
 
-* How to run the test suite
+## Test
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+$ RAILS_ENV=test bin/rails db:create db:migrate
 
-* Deployment instructions
+# Run all tests
+$ bin/rails test
 
-* ...
+# Run only controller tests
+$ bin/rails test:controllers
+```
+
