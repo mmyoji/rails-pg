@@ -1,0 +1,33 @@
+<%= form_with model: user, local: true do |f| %>
+  <ul>
+    <% if user.errors.any? %>
+      <% user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <fieldset>
+    <div>
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
+    </div>
+
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <%= f.submit nil %>
+  </fieldset>
+<% end %>
