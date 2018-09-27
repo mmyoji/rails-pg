@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  root to: "web/home#index"
-
-  namespace :web do
+  scope module: "web" do
     constraints subdomain: "www" do
       root to: "home#index"
 
