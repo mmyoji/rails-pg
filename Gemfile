@@ -12,7 +12,6 @@ gem 'pg'
 gem 'puma'
 gem 'sass-rails'
 gem 'turbolinks'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
