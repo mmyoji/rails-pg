@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       get    "login",  to: "sessions#new",     as: :login
       delete "logout", to: "sessions#destroy", as: :logout
 
+      get "confirmations", to: "confirmations#create", as: :confirmations
+
       resources :users, only: %i(new create)
       resources :sessions, only: %i(create)
     end

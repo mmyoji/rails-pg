@@ -63,4 +63,19 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(@params.merge(password: real_pswd, password_confirmation: real_pswd))
     assert user.valid?
   end
+
+  test "confirmation_token must be set" do
+    user = User.new(@params)
+    refute user.confirmation_token?
+
+    user.save!
+    assert user.confirmation_token?
+  end
+
+  test "#confirm! updates confirmed_at" do
+    refute @user.confirmed_at?
+
+    @user.confirm!
+    assert @user.confirmed_at?
+  end
 end
