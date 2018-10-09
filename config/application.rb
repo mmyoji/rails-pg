@@ -32,5 +32,7 @@ module RailsPg
       g.helper      false
       g.skip_routes true
     end
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
