@@ -12,7 +12,6 @@ gem 'pg'
 gem 'puma'
 gem 'sass-rails'
 gem 'sidekiq'
-gem 'turbolinks'
 gem 'uglifier'
 gem 'webpacker'
 
