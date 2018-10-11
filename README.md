@@ -4,6 +4,7 @@
 
 * Ruby  v2.5.1
 * Rails v5.2.1
+* yarn (for webpacker)
 * docker, docker-compose
 * [direnv](https://github.com/direnv/direnv)
 
