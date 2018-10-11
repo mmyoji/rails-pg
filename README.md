@@ -5,10 +5,14 @@
 * Ruby  v2.5.1
 * Rails v5.2.1
 * docker, docker-compose
+* [direnv](https://github.com/direnv/direnv)
 
 ## Setup
 
 ```sh
+$ cp .envrc.example .envrc
+# and tweak environment variables
+
 # bundle install
 $ bundle -j 4 --path=vendor/bundle
 
