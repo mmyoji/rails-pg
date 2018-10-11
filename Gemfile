@@ -14,6 +14,7 @@ gem 'sass-rails'
 gem 'sidekiq'
 gem 'turbolinks'
 gem 'uglifier'
+gem 'webpacker'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
