@@ -61,6 +61,6 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = {
     host: "www.lvh.me",
-    port: 3000,
+    port: ENV.fetch("PORT"),
   }
 end
