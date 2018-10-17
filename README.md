@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* Ruby  v2.5.1
+* Ruby  v2.5.2
 * Rails v5.2.1
 * yarn (for webpacker)
 * docker, docker-compose
