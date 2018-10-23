@@ -4,38 +4,30 @@
 
 * Ruby  v2.5.2
 * Rails v5.2.1
-* yarn (for webpacker)
 * docker, docker-compose
-* [direnv](https://github.com/direnv/direnv)
 
 ## Setup
 
 ```sh
-$ cp .envrc.example .envrc
+$ cp .env.example .env
 # and tweak environment variables
-
-# bundle install
-$ bundle -j 4 --path=vendor/bundle
 
 # Start docker services
 $ docker-compose up -d
 
 # Create DB
-$ bin/rails db:create db:migrate
-
-# Start the server
-$ bin/rails s
+$ docker-compose run web rails db:create db:migrate
 ```
 
 ## Test
 
 ```sh
-$ RAILS_ENV=test bin/rails db:create db:migrate
+$ docker-compose run -e RAILS_ENV=test web rails db:create db:migrate
 
 # Run all tests
-$ bin/rails test
+$ docker-compose run web rails test
 
 # Run only controller tests
-$ bin/rails test:controllers
+$ docker-compose run web rails test:controllers
 ```
 

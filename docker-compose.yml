@@ -1,5 +1,19 @@
 version: '3'
 services:
+  web:
+    build: .
+    command: bundle exec rails s -p ${PORT} -b '0.0.0.0'
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "${PORT}:${PORT}"
+    depends_on:
+      - postgres
+      - redis
+
   postgres:
     image: postgres:10.5
     environment:
@@ -12,3 +26,7 @@ services:
     image: redis:4.0
     ports:
       - "6379:6379"
+
+volumes:
+  bundle:
+    driver: local
