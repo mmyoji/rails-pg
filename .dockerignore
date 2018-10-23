@@ -1,4 +1,13 @@
-.git*
-log/*
-tmp/*
+.env
+.env.example
+.gitignore
+
+.bundle
+.circleci
+.git
+
 README.md
+
+log
+node_modules
+tmp
