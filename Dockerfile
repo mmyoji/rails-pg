@@ -2,18 +2,21 @@ FROM ruby:2.5.3
 
 RUN apt-get update -qq && \
   apt-get install -qq -y --no-install-recommends \
-    build-essential \
-    libpq-dev \
     apt-transport-https \
+    build-essential \
     curl \
-    wget
+    libpq-dev \
+    wget && \
+  rm -rf /var/lib/apt/lists/*
 # nodejs
 RUN wget -qO- https://deb.nodesource.com/setup_10.x | bash - && \
-  apt-get install -y -qq --no-install-recommends nodejs
+  apt-get install -y -qq --no-install-recommends nodejs && \
+  rm -rf /var/lib/apt/lists/*
 # yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-  apt-get update -qq && apt-get install -y -qq --no-install-recommends yarn
+  apt-get update -qq && apt-get install -y -qq --no-install-recommends yarn && \
+  rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
