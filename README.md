@@ -2,8 +2,6 @@
 
 ## Requirements
 
-* Ruby  v2.5.2
-* Rails v5.2.1
 * docker, docker-compose
 
 ## Setup
