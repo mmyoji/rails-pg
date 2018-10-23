@@ -1,5 +1,7 @@
 # README - Rails Playground
 
+[![CircleCI](https://circleci.com/gh/mmyoji/rails-pg.svg?style=svg)](https://circleci.com/gh/mmyoji/rails-pg)
+
 ## Requirements
 
 * docker, docker-compose
