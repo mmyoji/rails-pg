@@ -31,3 +31,12 @@ $ docker-compose run web rails test
 $ docker-compose run web rails test:controllers
 ```
 
+## Access DB
+
+```
+$ docker-compose run postgres psql -U <postgres_username> -h postgres
+
+# change the database
+>> \c rails-pg_development
+```
+
