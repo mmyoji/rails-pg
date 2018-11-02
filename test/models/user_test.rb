@@ -8,6 +8,7 @@ class UserTest < ActiveSupport::TestCase
       email:                 "sample-user@example.com",
       password:              "password",
       password_confirmation: "password",
+      confirmation_token:    SecureRandom.urlsafe_base64,
     }
   end
 
@@ -64,12 +65,12 @@ class UserTest < ActiveSupport::TestCase
     assert user.valid?
   end
 
-  test "confirmation_token must be set" do
-    user = User.new(@params)
-    refute user.confirmation_token?
+  test "confirmation_token must be present" do
+    user = User.new(@params.merge(confirmation_token: nil))
+    refute user.valid?
 
-    user.save!
-    assert user.confirmation_token?
+    user.confirmation_token = SecureRandom.urlsafe_base64
+    assert user.valid?
   end
 
   test "#confirm! updates confirmed_at" do

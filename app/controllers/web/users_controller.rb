@@ -6,8 +6,9 @@ class Web::UsersController < Web::BaseController
 
   # POST /users
   def create
-    @user = User.create(user_params)
-    if @user.valid?
+    @user = User.new(user_params)
+    @user.assign_confirmation_token
+    if @user.save
       UserMailer.with(user: @user).confirm.deliver_later
       redirect_to root_url, notice: "Your account is successfully created!"
     else

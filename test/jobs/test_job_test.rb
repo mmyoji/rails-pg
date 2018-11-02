@@ -8,6 +8,7 @@ class TestJobTest < ActiveJob::TestCase
       email: "howidiot@example.com",
       password: "passwd",
       password_confirmation: "passwd",
+      confirmation_token: SecureRandom.urlsafe_base64,
     )
     TestJob.perform_now(username)
 
