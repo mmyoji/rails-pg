@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
       resources :users, only: %i(new create)
       resources :sessions, only: %i(create)
+
+      resource :resend_confirmation_email, only: %i(new create)
     end
   end
 end

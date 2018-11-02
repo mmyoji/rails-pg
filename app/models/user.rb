@@ -12,6 +12,10 @@ class User < ApplicationRecord
     self.confirmation_token = SecureRandom.urlsafe_base64
   end
 
+  def confirmed?
+    confirmed_at?
+  end
+
   def confirm!
     update!(confirmed_at: Time.current)
   end
