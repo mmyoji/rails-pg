@@ -83,6 +83,14 @@ class UserTest < ActiveSupport::TestCase
     refute_equal @user.confirmation_token, token2
   end
 
+  test "#confirmed?" do
+    @user.confirmed_at = nil
+    refute @user.confirmed?
+
+    @user.confirmed_at = Time.current
+    assert @user.confirmed?
+  end
+
   test "#confirm! updates confirmed_at" do
     refute @user.confirmed_at?
 
