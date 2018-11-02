@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :confirmation_token, presence: true
 
   def assign_confirmation_token
-    self.confirmation_token ||= SecureRandom.urlsafe_base64
+    self.confirmation_token = SecureRandom.urlsafe_base64
   end
 
   def confirm!

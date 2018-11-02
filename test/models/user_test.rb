@@ -73,6 +73,16 @@ class UserTest < ActiveSupport::TestCase
     assert user.valid?
   end
 
+  test "#assign_confirmation_token always set a new confirmation_token" do
+    token1 = @user.confirmation_token.dup
+    @user.assign_confirmation_token
+    refute_equal @user.confirmation_token, token1
+
+    token2 = @user.confirmation_token.dup
+    @user.assign_confirmation_token
+    refute_equal @user.confirmation_token, token2
+  end
+
   test "#confirm! updates confirmed_at" do
     refute @user.confirmed_at?
 
