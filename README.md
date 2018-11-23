@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/mmyoji/rails-pg.svg?style=svg)](https://circleci.com/gh/mmyoji/rails-pg)
 
+[My philosophy when writing code](https://blog.mmyoji.com/posts/2018-11-21-philosophy-when-writing-code/)
+
 ## Requirements
 
 * docker, docker-compose
