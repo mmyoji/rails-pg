@@ -1,9 +1,9 @@
-<%= form_with model: user, local: true do |f| %>
-  <%= render "shared/model_errors", model: user %>
+<%= form_with scope: :user, model: current_user, url: setting_url, local: true do |f| %>
+  <%= render "shared/model_errors", model: current_user %>
 
   <div class="field">
     <%= f.label :username, class: "label" %>
-    <%= f.text_field :username, autofocus: true, class: "input" %>
+    <%= f.text_field :username, class: "input" %>
   </div>
 
   <div class="field">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <div class="control">
-      <%= f.submit nil, class: "button is-link" %>
+      <%= f.submit "Update", class: "button is-link" %>
     </div>
   </div>
 <% end %>
