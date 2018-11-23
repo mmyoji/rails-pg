@@ -97,4 +97,18 @@ class UserTest < ActiveSupport::TestCase
     @user.confirm!
     assert @user.confirmed_at?
   end
+
+  test "#update_confirmation_token! updates confirmation columns" do
+    @user.confirm!
+    ex_token = @user.confirmation_token.dup
+    Sidekiq::Queues["mailers"].clear
+
+    @user.update_confirmation_token!
+
+    refute_equal ex_token, @user.reload.confirmation_token
+    assert_nil @user.confirmed_at
+    assert_equal 1, Sidekiq::Queues["mailers"].size
+
+    Sidekiq::Queues["mailers"].clear
+  end
 end

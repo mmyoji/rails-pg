@@ -4,7 +4,7 @@ class Web::ResendConfirmationEmailsControllerTest < ActionDispatch::IntegrationT
   setup do
     @user = users(:mmyoji)
 
-    sign_in @user, "password"
+    sign_in @user
   end
 
   test "GET /resend_confirmation_email/new" do
@@ -18,11 +18,5 @@ class Web::ResendConfirmationEmailsControllerTest < ActionDispatch::IntegrationT
     assert_response :found
 
     refute_equal @user.reload.confirmation_token, token
-  end
-
-  private
-
-  def sign_in(user, password)
-    post sessions_url, params: { user: { email: user.email, password: password } }
   end
 end

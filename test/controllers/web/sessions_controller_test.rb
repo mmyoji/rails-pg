@@ -29,15 +29,9 @@ class Web::SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "DELETE /logout redirects to root" do
-    sign_in @user, "password"
+    sign_in @user
 
     delete logout_url
     assert_redirected_to root_url
-  end
-
-  private
-
-  def sign_in(user, password)
-    post sessions_url, params: { user: { email: user.email, password: password } }
   end
 end

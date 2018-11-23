@@ -7,9 +7,7 @@ class Web::ResendConfirmationEmailsController < Web::BaseController
 
   # POST /resend_confirmation_email
   def create
-    current_user.assign_confirmation_token
-    current_user.save!
-    UserMailer.with(user: current_user).confirm.deliver_later
+    current_user.update_confirmation_token!
 
     redirect_to root_url, notice: "Confirmation email is successfully sent and check it!"
   end

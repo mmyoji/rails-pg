@@ -19,4 +19,11 @@ class User < ApplicationRecord
   def confirm!
     update!(confirmed_at: Time.current)
   end
+
+  def update_confirmation_token!
+    assign_confirmation_token
+    self.confirmed_at = nil
+    save!
+    ::UserMailer.with(user: self).confirm.deliver_later
+  end
 end
