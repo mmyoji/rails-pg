@@ -23,8 +23,6 @@ gem 'webpacker'
 
 group :development do
   gem 'listen'
-  gem 'spring'
-  gem 'spring-watcher-listen'
   gem 'web-console'
 end
 
