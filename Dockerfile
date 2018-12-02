@@ -1,4 +1,4 @@
-FROM ruby:2.5.3
+FROM ruby:2.6.0-preview3-slim
 
 RUN apt-get update -qq && \
   apt-get install -qq -y --no-install-recommends \
@@ -6,7 +6,8 @@ RUN apt-get update -qq && \
     build-essential \
     curl \
     libpq-dev \
-    wget && \
+    wget \
+    gnupg2 && \
   rm -rf /var/lib/apt/lists/*
 # nodejs
 RUN wget -qO- https://deb.nodesource.com/setup_10.x | bash - && \
