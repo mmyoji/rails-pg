@@ -14,23 +14,16 @@
 $ cp .env.example .env
 # and tweak environment variables
 
-# Start docker services
-$ docker-compose up -d
-
-# Create DB
-$ docker-compose run web rails db:create db:migrate
+$ make setup
 ```
 
 ## Test
 
 ```sh
-$ docker-compose run -e RAILS_ENV=test web rails db:create db:migrate
-
-# Run all tests
-$ docker-compose run web rails test
+$ make test
 
 # Run only controller tests
-$ docker-compose run web rails test:controllers
+$ docker-compose run --rm web rails test:controllers
 ```
 
 ## Access DB
