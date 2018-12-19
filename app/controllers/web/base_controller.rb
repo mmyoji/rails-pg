@@ -1,4 +1,6 @@
 class Web::BaseController < ApplicationController
+  layout "web/application"
+
   helper_method :current_user
 
   def current_user
