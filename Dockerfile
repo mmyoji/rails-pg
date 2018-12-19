@@ -1,4 +1,4 @@
-FROM ruby:2.5.3-slim
+FROM ruby:2.6.0-rc2-slim
 
 RUN apt-get update -qq && \
   apt-get install -qq -y --no-install-recommends \
