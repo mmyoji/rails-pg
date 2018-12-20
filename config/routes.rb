@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   # For studio owners
   scope module: "owner" do
     constraints subdomain: "owner" do
-      root to: "home#index"
+      root to: "home#index", as: :owner_root
 
       # get    "login",  to: "sessions#new",     as: :owner_login
       # delete "logout", to: "sessions#destroy", as: :owner_logout
