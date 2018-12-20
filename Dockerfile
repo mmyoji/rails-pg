@@ -1,10 +1,11 @@
-FROM ruby:2.5.3
+FROM ruby:2.5.3-slim
 
 RUN apt-get update -qq && \
   apt-get install -qq -y --no-install-recommends \
     apt-transport-https \
     build-essential \
     curl \
+    gnupg2 \
     libpq-dev \
     wget && \
   rm -rf /var/lib/apt/lists/*
