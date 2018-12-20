@@ -4,6 +4,15 @@
 
 [My philosophy when writing code](https://blog.mmyoji.com/posts/2018-11-21-philosophy-when-writing-code/)
 
+## What's this?
+
+This is my Rails-playground application (Music Studio Booking app).
+
+There are 2 apps:
+
+1. web app: for `User`s who want to find and book a `Room` of a `Studio` online.
+1. owner app: for `Owner`s who want to show `Room`s of his/her `Studio`s and manage `Booking`s of them.
+
 ## Requirements
 
 * docker, docker-compose
