@@ -1,4 +1,5 @@
 {
+  "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bulma": "^0.7.1",
