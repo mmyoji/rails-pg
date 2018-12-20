@@ -8,10 +8,11 @@
 
 This is my Rails-playground application (Music Studio Booking app).
 
-There are 2 apps:
+There are 3 apps:
 
 1. web app: for `User`s who want to find and book a `Room` of a `Studio` online.
 1. owner app: for `Owner`s who want to show `Room`s of his/her `Studio`s and manage `Booking`s of them.
+1. admin app: for `AdminUser`s who operates all apps as an administrator.
 
 ## Requirements
 

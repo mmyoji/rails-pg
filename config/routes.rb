@@ -43,4 +43,14 @@ Rails.application.routes.draw do
       # resource :setting, only: %i(edit update)
     end
   end
+
+  # For administrator
+  scope module: "admin" do
+    constraints subdomain: "admin" do
+      root to: "home#index", as: :admin_root
+
+      # resources :admin_users
+      # resources :owners
+    end
+  end
 end
