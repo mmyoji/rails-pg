@@ -10,7 +10,25 @@ class ActiveSupport::TestCase
 
   private
 
-  def sign_in(user, password = "password")
-    post sessions_url, params: { user: { email: user.email, password: password } }
+  def admin_sign_in(user, password = "password")
+    post \
+      sessions_url(subdomain: "admin"),
+      params: {
+        admin_user: {
+          email: user.email,
+          password: password,
+        }
+      }
+  end
+
+  def web_sign_in(user, password = "password")
+    post \
+      sessions_url(subdomain: "www"),
+      params: {
+        user: {
+          email: user.email,
+          password: password,
+        }
+      }
   end
 end

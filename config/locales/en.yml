@@ -34,3 +34,5 @@ en:
   title: "Rails Playground"
   web:
     title: "Web | Rails Playground"
+  admin:
+    title: "Admin | Rails Playground"
