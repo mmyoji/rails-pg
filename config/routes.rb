@@ -49,8 +49,12 @@ Rails.application.routes.draw do
     constraints subdomain: "admin" do
       root to: "home#index", as: :admin_root
 
+      get    "login",  to: "sessions#new",     as: :admin_login
+      delete "logout", to: "sessions#destroy", as: :admin_logout
+
       # resources :admin_users
       # resources :owners
+      resources :sessions, only: %i(create)
     end
   end
 end

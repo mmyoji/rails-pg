@@ -10,9 +10,9 @@ class Web::SessionsController < Web::BaseController
     user = User.find_by(email: session_params[:email])
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id.to_s
-      redirect_to root_url, notice: "Welcome back!"
+      redirect_to root_url, notice: t("welcome")
     else
-      flash.now[:alert] = "Incorrect email or password."
+      flash.now[:alert] = t("invalid_login")
       render :new
     end
   end
@@ -20,7 +20,7 @@ class Web::SessionsController < Web::BaseController
   # DELETE /logout
   def destroy
     session.delete(:user_id)
-    redirect_to root_url, notice: "Successfully logged out!"
+    redirect_to root_url, notice: t("logout")
   end
 
   private

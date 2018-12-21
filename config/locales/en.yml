@@ -30,8 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   title: "Rails Playground"
+  welcome: "Welcome back!"
+  invalid_login: "Incorrect email or password."
+  logout: "Successfully logged out!"
   web:
     title: "Web | Rails Playground"
   admin:
