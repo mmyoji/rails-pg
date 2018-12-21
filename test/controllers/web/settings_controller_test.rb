@@ -14,7 +14,7 @@ class Web::SettingsControllerTest < ActionDispatch::IntegrationTest
   ### GET /setting ###
 
   test "GET /setting returns 200 w/ logged-in user" do
-    sign_in @user
+    web_sign_in @user
 
     get edit_setting_url
     assert_response :success
@@ -36,7 +36,7 @@ class Web::SettingsControllerTest < ActionDispatch::IntegrationTest
 
   test "PATCH /setting w/ valid params returns 302" do
     @user.confirm!
-    sign_in @user
+    web_sign_in @user
 
     ex_token = @user.confirmation_token.dup
 
@@ -49,7 +49,7 @@ class Web::SettingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "PATCH /setting w/ valid params but email not changed returns 302" do
-    sign_in @user
+    web_sign_in @user
 
     ex_email = @user.email.dup
     ex_token = @user.confirmation_token.dup
@@ -64,7 +64,7 @@ class Web::SettingsControllerTest < ActionDispatch::IntegrationTest
 
 
   test "PATCH /setting w/ invalid params returns 200" do
-    sign_in @user
+    web_sign_in @user
 
     patch setting_url, params: { user: @user_params.dup.merge(email: "") }
     refute_equal @user.reload.username, @user_params.fetch(:username)

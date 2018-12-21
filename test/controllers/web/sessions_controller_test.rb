@@ -29,7 +29,7 @@ class Web::SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "DELETE /logout redirects to root" do
-    sign_in @user
+    web_sign_in @user
 
     delete logout_url
     assert_redirected_to root_url

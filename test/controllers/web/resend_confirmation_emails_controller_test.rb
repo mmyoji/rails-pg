@@ -4,7 +4,7 @@ class Web::ResendConfirmationEmailsControllerTest < ActionDispatch::IntegrationT
   setup do
     @user = users(:mmyoji)
 
-    sign_in @user
+    web_sign_in @user
   end
 
   test "GET /resend_confirmation_email/new" do
