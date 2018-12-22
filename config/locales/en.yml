@@ -34,7 +34,32 @@ en:
   welcome: "Welcome back!"
   invalid_login: "Incorrect email or password."
   logout: "Successfully logged out!"
+  show: "Show"
+  edit: "Edit"
+
+  # Views
   web:
     title: "Web | Rails Playground"
+
   admin:
     title: "Admin | Rails Playground"
+    companies:
+      index:
+        title: "Companies"
+
+  errors:
+    error_404:
+      title: "Record Not Found"
+
+  id: ID
+  # Models
+  activerecord:
+    models:
+      company: Company
+    attributes:
+      company:
+        name: Name
+        tel: Tel
+        email: Email
+        address: Address
+        founded_at: Founded

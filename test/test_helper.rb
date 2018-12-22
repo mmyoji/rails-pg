@@ -12,7 +12,7 @@ class ActiveSupport::TestCase
 
   def admin_sign_in(user, password = "password")
     post \
-      sessions_url(subdomain: "admin"),
+      admin_sessions_url,
       params: {
         admin_user: {
           email: user.email,
@@ -23,7 +23,7 @@ class ActiveSupport::TestCase
 
   def web_sign_in(user, password = "password")
     post \
-      sessions_url(subdomain: "www"),
+      sessions_url,
       params: {
         user: {
           email: user.email,

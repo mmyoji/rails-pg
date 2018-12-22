@@ -5,6 +5,13 @@ class Admin::BaseController < ApplicationController
 
   before_action :authenticate_user!
 
+  rescue_from ActiveRecord::RecordNotFound do |e|
+    render \
+      template: "errors/error_404",
+      locals: { message: e.message },
+      status: 404
+  end
+
   def current_user
     @_current_user ||= AdminUser.find(session[:admin_user_id]) if session[:admin_user_id]
   end

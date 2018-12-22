@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Web::UsersControllerTest < ActionDispatch::IntegrationTest
   test "GET /users/new returns 200" do
-    get new_user_url(subdomain: "www")
+    get new_user_url
     assert_response :success
   end
 
@@ -13,8 +13,8 @@ class Web::UsersControllerTest < ActionDispatch::IntegrationTest
       password:              "password",
       password_confirmation: "password",
     }
-    post users_url(subdomain: "www"), params: { user: params }
-    assert_redirected_to root_url(subdomain: "www")
+    post users_url, params: { user: params }
+    assert_redirected_to root_url
 
     assert User.exists?(username: params[:username], email: params[:email])
   end
@@ -26,7 +26,7 @@ class Web::UsersControllerTest < ActionDispatch::IntegrationTest
       password:              "password",
       password_confirmation: "incorrect",
     }
-    post users_url(subdomain: "www"), params: { user: params }
+    post users_url, params: { user: params }
     assert_response :success
 
     refute User.exists?(username: params[:username], email: params[:email])
