@@ -65,7 +65,7 @@
                 <%= link_to edit_setting_path, class: "button" do %>
                   Setting
                 <% end %>
-                <%= link_to logout_path, method: :delete, data: { confirm: "Are you sure to logout?" }, class: "button is-danger" do %>
+                <%= link_to logout_path, method: :delete, data: { confirm: t("logout_confirm") }, class: "button is-danger" do %>
                   Logout
                 <% end %>
               <% else %>

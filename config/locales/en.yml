@@ -34,8 +34,12 @@ en:
   welcome: "Welcome back!"
   invalid_login: "Incorrect email or password."
   logout: "Successfully logged out!"
+  logout_confirm: "Are you sure to logout?"
   show: "Show"
   edit: "Edit"
+  created: "Created!"
+  updated: "Updated!"
+  delete_confirm: "Are you sure to delete?"
 
   # Views
   web:
@@ -46,6 +50,10 @@ en:
     companies:
       index:
         title: "Companies"
+      new:
+        title: "New Company"
+      edit:
+        title: "Edit Company"
 
   errors:
     error_404:

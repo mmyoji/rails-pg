@@ -24,7 +24,7 @@
           <div class="navbar-item">
             <div class="buttons">
               <% if current_user %>
-                <%= link_to admin_logout_path, method: :delete, data: { confirm: "Are you sure to logout?" }, class: "button is-danger" do %>
+                <%= link_to admin_logout_path, method: :delete, data: { confirm: t("logout_confirm") }, class: "button is-danger" do %>
                   Logout
                 <% end %>
               <% else %>
