@@ -17,47 +17,9 @@
         <%= link_to admin_root_path, class: "navbar-item" do %>
           <p>Admin</p>
         <% end %>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <%= link_to "#", class: "navbar-item" do %>
-            Home
-          <% end %>
-
-          <%= link_to "#", class: "navbar-item" do %>
-            Documentation
-          <% end %>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <%= link_to "#", class: "navbar-link" do %>
-              More
-            <% end %>
-
-            <div class="navbar-dropdown">
-              <%= link_to "#", class: "navbar-item" do %>
-                About
-              <% end %>
-              <%= link_to "#", class: "navbar-item" do %>
-                Jobs
-              <% end %>
-              <%= link_to "#", class: "navbar-item" do %>
-                Contact
-              <% end %>
-              <hr class="navbar-divider">
-              <%= link_to "#", class: "navbar-item" do %>
-                Report an issue
-              <% end %>
-            </div>
-          </div>
-        </div>
-
+      <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
@@ -78,12 +40,36 @@
 
     <section class="section">
       <div class="container">
-        <% flash.each do |name, msg| %>
-          <div class="notification <%= name %>"><%= msg %></div>
-        <% end %>
+        <div class="columns">
 
-        <%= yield %>
-      </div>
+          <div class="column is-one-quarter">
+            <aside class="menu">
+              <p class="menu-label">
+                General
+              </p>
+              <ul class="menu-list">
+                <li><%= link_to "Home", admin_root_path, class: ("is-active" if current_page?(admin_root_path)) %></li>
+              </ul>
+              <p class="menu-label">
+                Administration
+              </p>
+              <ul class="menu-list">
+                <li><%= link_to "Company", admin_companies_path, class: ("is-active" if controller_name == "companies") %></li>
+                <li><%= link_to "StaffMember", "#", class: ("is-active" if controller_name == "staff_members") %></li>
+                <li><%= link_to "AdminUser", "#", class: ("is-active" if controller_name == "admin_users") %></li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="column">
+            <% flash.each do |name, msg| %>
+              <div class="notification <%= name %>"><%= msg %></div>
+            <% end %>
+
+            <%= yield %>
+          </div>
+        </div><!-- .column -->
+      </div><!-- .container -->
     </section>
   </body>
 </html>
