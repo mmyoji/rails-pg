@@ -8,7 +8,7 @@
         <%= link_to t("edit"), edit_admin_company_path(@company), class: "button" %>
       </div>
       <div class="column">
-        <%= link_to t("destroy"), admin_company_path(@company), class: "button is-danger", method: :delete, data: { confirm: t("delete_confirm") } %>
+        <%= link_to t("delete"), admin_company_path(@company), class: "button is-danger", method: :delete, data: { confirm: t("delete_confirm") } %>
       </div>
     </div>
   </div>

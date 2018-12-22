@@ -37,8 +37,10 @@ en:
   logout_confirm: "Are you sure to logout?"
   show: "Show"
   edit: "Edit"
+  delete: "Delete"
   created: "Created!"
   updated: "Updated!"
+  deleted: "Deleted!"
   delete_confirm: "Are you sure to delete?"
 
   # Views

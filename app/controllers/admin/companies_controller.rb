@@ -1,7 +1,7 @@
 class Admin::CompaniesController < Admin::BaseController
   # GET /companies
   def index
-    @companies = Company.all
+    @companies = Company.all.order(id: :desc)
   end
 
   # GET /companies/:id
@@ -41,6 +41,8 @@ class Admin::CompaniesController < Admin::BaseController
 
   # DELETE /companies/:id
   def destroy
+    Company.destroy(params[:id])
+    redirect_to admin_companies_path, notice: t("deleted")
   end
 
   private

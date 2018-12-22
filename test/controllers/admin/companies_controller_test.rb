@@ -105,4 +105,18 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     refute_equal params.dig(:company, :name), @company.reload.name
     assert_response :success
   end
+
+  test "DELETE #destroy destroys Company" do
+    assert_difference "Company.count", -1 do
+      delete admin_company_path(@company)
+    end
+    assert_redirected_to admin_companies_path
+  end
+
+  test "DELETE #destroy w/ invalid ID doesn't destroy Company" do
+    assert_no_difference "Company.count" do
+      delete admin_company_path(id: 1_000)
+    end
+    assert_response :not_found
+  end
 end
