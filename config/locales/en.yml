@@ -34,7 +34,42 @@ en:
   welcome: "Welcome back!"
   invalid_login: "Incorrect email or password."
   logout: "Successfully logged out!"
+  logout_confirm: "Are you sure to logout?"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  created: "Created!"
+  updated: "Updated!"
+  deleted: "Deleted!"
+  delete_confirm: "Are you sure to delete?"
+
+  # Views
   web:
     title: "Web | Rails Playground"
+
   admin:
     title: "Admin | Rails Playground"
+    companies:
+      index:
+        title: "Companies"
+      new:
+        title: "New Company"
+      edit:
+        title: "Edit Company"
+
+  errors:
+    error_404:
+      title: "Record Not Found"
+
+  id: ID
+  # Models
+  activerecord:
+    models:
+      company: Company
+    attributes:
+      company:
+        name: Name
+        tel: Tel
+        email: Email
+        address: Address
+        founded_at: Founded

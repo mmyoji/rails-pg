@@ -15,7 +15,7 @@ class Admin::SessionsControllerTest < ActionDispatch::IntegrationTest
       email:    @admin_user.email,
       password: "password",
     }
-    post sessions_url(subdomain: "admin"), params: { admin_user: params }
+    post admin_sessions_url, params: { admin_user: params }
     assert_redirected_to admin_root_url
   end
 
@@ -24,7 +24,7 @@ class Admin::SessionsControllerTest < ActionDispatch::IntegrationTest
       email:    @admin_user.email,
       password: "",
     }
-    post sessions_url(subdomain: "admin"), params: { admin_user: params }
+    post admin_sessions_url, params: { admin_user: params }
     assert_response :success
   end
 

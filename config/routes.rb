@@ -23,16 +23,17 @@ Rails.application.routes.draw do
     end
   end
 
-  # For studio owners
-  scope module: "owner" do
-    constraints subdomain: "owner" do
-      root to: "home#index", as: :owner_root
+  # For studio staff
+  scope module: "biz", as: :biz do
+    constraints subdomain: "biz" do
+      root to: "home#index"
 
-      # get    "login",  to: "sessions#new",     as: :owner_login
-      # delete "logout", to: "sessions#destroy", as: :owner_logout
+      # get    "login",  to: "sessions#new"
+      # delete "logout", to: "sessions#destroy"
 
       # resources :bookings, only: %i(index show)
       # resources :sessions, only: %i(create)
+      # resources :staff_members
       # resources :studios do
       #   scope module: :studios do
       #     resources :bookings
@@ -40,20 +41,25 @@ Rails.application.routes.draw do
       #   end
       # end
 
+      # resource :company, only: %i(show edit update)
       # resource :setting, only: %i(edit update)
     end
   end
 
   # For administrator
-  scope module: "admin" do
+  scope module: "admin", as: :admin do
     constraints subdomain: "admin" do
-      root to: "home#index", as: :admin_root
+      root to: "home#index"
 
-      get    "login",  to: "sessions#new",     as: :admin_login
-      delete "logout", to: "sessions#destroy", as: :admin_logout
+      get    "login",  to: "sessions#new"
+      delete "logout", to: "sessions#destroy"
 
       # resources :admin_users
-      # resources :owners
+      resources :companies do
+        # scope module: :companies do
+        #   resources :studio_members
+        # end
+      end
       resources :sessions, only: %i(create)
     end
   end

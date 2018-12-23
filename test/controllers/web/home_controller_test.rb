@@ -5,7 +5,7 @@ class Web::HomeControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :success
 
-    get root_url(subdomain: "www")
+    get root_url
     assert_response :success
   end
 end
