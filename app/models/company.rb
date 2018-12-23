@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-  # has_many :staff_members
+  has_many :staff_members
   # has_many :studios
 
   validates :name,       presence: true
