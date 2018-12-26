@@ -13,3 +13,10 @@ two:
   tel: "03-xxxx-xxxx"
   email: "music-two@example.com"
   founded_at: 2000-04-01
+
+three:
+  name: Three
+  address: "xxx-xxxx Minato, Tokyo"
+  tel: "03-xxxx-xxxx"
+  email: "three@example.com"
+  founded_at: 2010-06-01

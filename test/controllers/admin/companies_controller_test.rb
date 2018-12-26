@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @company = companies(:one)
+    @company = companies(:three)
 
     admin_sign_in admin_users(:one)
   end
