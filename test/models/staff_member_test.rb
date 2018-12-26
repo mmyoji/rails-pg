@@ -8,6 +8,7 @@ class StaffMemberTest < ActiveSupport::TestCase
       email:                 "sample-staff@example.com",
       password:              "password",
       password_confirmation: "password",
+      company_id:            @staff_member.company_id,
     }
   end
 
@@ -29,5 +30,17 @@ class StaffMemberTest < ActiveSupport::TestCase
   test "username must be <= 16" do
     @staff_member.username = "a" * 17
     refute @staff_member.valid?
+  end
+
+  test "#generate_random_password sets password and returns generated password" do
+    staff_member = StaffMember.new(
+      username: "test-1",
+      email: "test-1@example.com",
+      company: @staff_member.company,
+    )
+    password = staff_member.generate_random_password
+    assert password.is_a?(String)
+    assert_equal 8, password.size
+    assert staff_member.valid?
   end
 end

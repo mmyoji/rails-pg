@@ -57,6 +57,10 @@ en:
       edit:
         title: "Edit Company"
 
+      staff_members:
+        new:
+          title: "New StaffMember"
+
   errors:
     error_404:
       title: "Record Not Found"
