@@ -56,10 +56,14 @@ en:
         title: "New Company"
       edit:
         title: "Edit Company"
-
       staff_members:
         new:
           title: "New StaffMember"
+    staff_members:
+      index:
+        title: "StaffMembers"
+      edit:
+        title: "Edit StaffMember"
 
   errors:
     error_404:
@@ -70,6 +74,7 @@ en:
   activerecord:
     models:
       company: Company
+      staff_member: StaffMember
     attributes:
       company:
         name: Name
@@ -77,3 +82,7 @@ en:
         email: Email
         address: Address
         founded_at: Founded
+      staff_member:
+        company_id: Company
+        username: Username
+        email: Email
