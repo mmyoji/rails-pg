@@ -55,7 +55,7 @@
               </p>
               <ul class="menu-list">
                 <li><%= link_to "Company", admin_companies_path, class: ("is-active" if controller_name == "companies") %></li>
-                <li><%= link_to "StaffMember", "#", class: ("is-active" if controller_name == "staff_members") %></li>
+                <li><%= link_to "StaffMember", admin_staff_members_path, class: ("is-active" if controller_name.match?(/staff_members/)) %></li>
                 <li><%= link_to "AdminUser", "#", class: ("is-active" if controller_name == "admin_users") %></li>
               </ul>
             </aside>

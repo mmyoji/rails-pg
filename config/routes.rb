@@ -56,11 +56,12 @@ Rails.application.routes.draw do
 
       # resources :admin_users
       resources :companies do
-        # scope module: :companies do
-        #   resources :studio_members
-        # end
+        scope module: :companies do
+          resources :staff_members, only: %i(new create)
+        end
       end
       resources :sessions, only: %i(create)
+      resources :staff_members, only: %i(index show edit update destroy)
     end
   end
 end

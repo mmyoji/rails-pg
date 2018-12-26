@@ -5,6 +5,9 @@
   <div class="level-right">
     <div class="columns">
       <div class="column">
+        <%= link_to t("admin.companies.staff_members.new.title"), new_admin_company_staff_member_path(@company), class: "button is-primary" %>
+      </div>
+      <div class="column">
         <%= link_to t("edit"), edit_admin_company_path(@company), class: "button" %>
       </div>
       <div class="column">

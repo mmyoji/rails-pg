@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
   name: One
   address: "xxx-xxxx Shibuya, Tokyo"
   tel: "03-xxxx-xxxx"
@@ -9,9 +8,15 @@ one:
   founded_at: 2018-12-22
 
 two:
-  id: 2
   name: Two
   address: "xxx-xxxx Nerima, Tokyo"
   tel: "03-xxxx-xxxx"
   email: "music-two@example.com"
   founded_at: 2000-04-01
+
+three:
+  name: Three
+  address: "xxx-xxxx Minato, Tokyo"
+  tel: "03-xxxx-xxxx"
+  email: "three@example.com"
+  founded_at: 2010-06-01
