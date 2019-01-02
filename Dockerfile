@@ -1,4 +1,4 @@
-FROM ruby:2.6.0-rc2-slim
+FROM ruby:2.6.0-slim
 
 RUN apt-get update -qq && \
   apt-get install -qq -y --no-install-recommends \
@@ -16,7 +16,7 @@ RUN wget -qO- https://deb.nodesource.com/setup_10.x | bash - && \
 # yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-  apt-get update -qq && apt-get install -y -qq --no-install-recommends yarn && \
+  apt-get update -qq && apt-get install -y --allow-unauthenticated -qq --no-install-recommends yarn && \
   rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/src/app
