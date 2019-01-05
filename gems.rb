@@ -27,6 +27,7 @@ gem 'bigdecimal'
 
 group :development do
   gem 'listen'
+  gem 'pry-rails'
   gem 'web-console'
 end
 
