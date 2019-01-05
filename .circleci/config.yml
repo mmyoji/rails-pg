@@ -13,6 +13,7 @@ jobs:
         environment:
           RAILS_ENV: test
           BUNDLE_PATH: vendor/bundle
+          BUNDLER_VERSION: 2.0.1
           DB_HOST: localhost
           PORT: 3000
           POSTGRES_PASSWORD: password
@@ -30,8 +31,13 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-bundle-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-bundle-{{ checksum "gems.locked" }}
           - v1-dependencies-bundle-
+      - run:
+          name: upgrade bundler
+          command: |
+            gem update --system
+            gem install bundler
 
       - run:
           name: bundle install
@@ -41,7 +47,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-bundle-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-bundle-{{ checksum "gems.locked" }}
 
       - restore_cache:
           keys:
