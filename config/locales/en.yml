@@ -47,6 +47,9 @@ en:
   web:
     title: "Web | Rails Playground"
 
+  biz:
+    title: "Biz | Rails Playground"
+
   admin:
     title: "Admin | Rails Playground"
     companies:
