@@ -10,5 +10,5 @@ console:
 
 .PHONY: test
 test:
-	docker-compose run --rm web bundle exec rails test
+	docker-compose run --rm web bundle exec rails test --pride
 

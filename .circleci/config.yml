@@ -71,5 +71,4 @@ jobs:
 
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
-
-      - run: bundle exec rake test
+      - run: bundle exec rails test --pride
