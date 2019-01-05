@@ -33,7 +33,7 @@ $ make setup
 $ make test
 
 # Run only controller tests
-$ docker-compose run --rm web rails test:controllers
+$ docker-compose run --rm web bundle exec rails test:controllers
 ```
 
 ## Access DB
