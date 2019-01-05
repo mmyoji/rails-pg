@@ -22,11 +22,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN gem update --system
-RUN gem install bundler
-
-COPY gems.rb      /usr/src/app/gems.rb
-COPY gems.locked  /usr/src/app/gems.locked
+COPY Gemfile      /usr/src/app/Gemfile
+COPY Gemfile.lock /usr/src/app/Gemfile.lock
 
 COPY package.json /usr/src/app/package.json
 COPY yarn.lock    /usr/src/app/yarn.lock
