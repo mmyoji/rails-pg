@@ -10,9 +10,9 @@ This is my Rails-playground application (Music Studio Booking app).
 
 There are 3 apps:
 
-1. web app: for `User`s who want to find and book a `Room` of a `Studio` online.
-1. biz app: for `StaffMember`s who want to show `Room`s of his/her `Studio`s and manage `Booking`s of them.
-1. admin app: for `AdminUser`s who operates all apps as an administrator.
+1. web app:   For `User`s who want to find and book a `Room` of a `Studio`.
+1. biz app:   For `StaffMember`s who want to show `Room`s of their `Studio`s and manage `Booking`s.
+1. admin app: For `AdminUser`s who operate all apps as an administrator.
 
 ## Requirements
 
