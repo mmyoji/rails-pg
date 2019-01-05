@@ -13,6 +13,7 @@ jobs:
         environment:
           RAILS_ENV: test
           BUNDLE_PATH: vendor/bundle
+          BUNDLE_PREFER_GEMS_RB: true
           BUNDLER_VERSION: 2.0.1
           DB_HOST: localhost
           PORT: 3000
