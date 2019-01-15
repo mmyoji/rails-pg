@@ -18,8 +18,8 @@ class Biz::BaseController < ApplicationController
   end
 
   def authenticate_user!
-    # return if current_user
+    return if current_user
 
-    # redirect_to biz_login_url and return
+    redirect_to biz_login_url and return
   end
 end
