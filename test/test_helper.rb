@@ -21,6 +21,17 @@ class ActiveSupport::TestCase
       }
   end
 
+  def biz_sign_in(user, password = "password")
+    post \
+      biz_sessions_url,
+      params: {
+        staff_member: {
+          email: user.email,
+          password: password,
+        }
+      }
+  end
+
   def web_sign_in(user, password = "password")
     post \
       sessions_url,

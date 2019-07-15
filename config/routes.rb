@@ -28,11 +28,11 @@ Rails.application.routes.draw do
     constraints subdomain: "biz" do
       root to: "home#index"
 
-      # get    "login",  to: "sessions#new"
-      # delete "logout", to: "sessions#destroy"
+      get    "login",  to: "sessions#new"
+      delete "logout", to: "sessions#destroy"
 
       # resources :bookings, only: %i(index show)
-      # resources :sessions, only: %i(create)
+      resources :sessions, only: %i(create)
       # resources :staff_members
       # resources :studios do
       #   scope module: :studios do
