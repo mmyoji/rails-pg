@@ -15,7 +15,7 @@ services:
       - redis
 
   postgres:
-    image: postgres:10.5
+    image: postgres:10-alpine
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
