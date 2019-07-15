@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@rails/webpacker@3.5":
-  version "3.5.5"
-  resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-3.5.5.tgz#8911c66bcefc8bc6b91270e92f0d39e3c2d43116"
-  integrity sha512-R9kglLb/R9mMqf2BW91XJHYc0q00qAO67vfrbV52ifTSywPOixEka/7oU3cb6671u1ajd74kuGAsCSnBtdVHJg==
+"@rails/webpacker@3.6":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-3.6.0.tgz#89f50421934a40cad7193cd62756a18fa5027251"
+  integrity sha512-QlEPgdi++lBjc2rGp2s3hhT9vbhskeMSpHWOxVnpoMjIspTvjSyRWBV8t15d9M4cy5W5Zxlt87aVce7gVI4lFA==
   dependencies:
     babel-core "^6.26.3"
     babel-loader "^7.1.5"
@@ -1189,7 +1189,7 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
-bulma@^0.7.1:
+bulma@latest:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.5.tgz#35066c37f82c088b68f94450be758fc00a967208"
   integrity sha512-cX98TIn0I6sKba/DhW0FBjtaDpxTelU166pf7ICXpCCuplHWyu6C9LYZmL5PEsnePIeJaiorsTEzzNk3Tsm1hw==
@@ -5905,7 +5905,7 @@ querystringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
 
-rails-ujs@^5.2.1:
+rails-ujs@latest:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.3.tgz#4b65ea781a6befe62e96da6362165286a1fe4099"
   integrity sha512-rYgj185MowWFBJI1wdac2FkX4yFYe4+3jJPlB+CTY7a4rmIyg0TqE4vYZmSBBesp7blPUa57oqKzwQjN7eVbEQ==
@@ -6702,7 +6702,7 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-stimulus@^1.1.0:
+stimulus@latest:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-1.1.1.tgz#53c2fded6849e7b85eed3ed8dd76e33abd74bec5"
   integrity sha512-R0mBqKp48YnRDZOxZ8hiOH4Ilph3Yj78CIFTBkCwyHs4iGCpe7xlEdQ7cjIxb+7qVCSxFKgxO+mAQbsNgt/5XQ==
@@ -7299,7 +7299,7 @@ webpack-dev-middleware@^3.7.0:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-"webpack-dev-server@>= 3.1.11":
+webpack-dev-server@latest:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.7.2.tgz#f79caa5974b7f8b63268ef5421222a8486d792f5"
   integrity sha512-mjWtrKJW2T9SsjJ4/dxDC2fkFVUw8jlpemDERqV0ZJIkjjjamR2AbQlr3oz+j4JLhYCHImHnXZK5H06P2wvUew==

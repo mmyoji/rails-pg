@@ -1,12 +1,12 @@
 {
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
-    "bulma": "^0.7.1",
-    "rails-ujs": "^5.2.1",
-    "stimulus": "^1.1.0"
+    "@rails/webpacker": "3.6",
+    "bulma": "latest",
+    "rails-ujs": "latest",
+    "stimulus": "latest"
   },
   "devDependencies": {
-    "webpack-dev-server": ">= 3.1.11"
+    "webpack-dev-server": "latest"
   }
 }
